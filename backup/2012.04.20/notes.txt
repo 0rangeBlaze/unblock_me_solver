@@ -1,0 +1,10 @@
+links:
+-----------------------------------------------------------
+http://htmlhelp.com/reference/
+
+
+
+how to:
+-----------------------------------------------------------
+To center the object horizontally on the page, place the object in a centered block, e.g.,
+<P ALIGN=center><OBJECT DATA="foo.mov" TYPE="video/quicktime"></OBJECT></P>

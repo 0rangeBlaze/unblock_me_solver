@@ -1,0 +1,40 @@
+<html>
+<script type="text/javascript">
+
+	var isIE = document.all ? true : false;
+
+
+	function init() {
+		label = document.getElementById("boardString");
+		//label.innerHTML = "hasCaptureEvents = " + hasCaptureEvents;
+		
+		//for (key in document)	 {
+		//label.innerHTML += "<br/>"+key;
+		//}
+			
+		//if ( isIE )
+		//	document.captureEvents(Event.MOUSEMOVE);
+		document.onmousemove = handleMouseMove;
+		
+		//label.innerHTML = " OK <br/>" + label.innerHTML;
+	}
+
+	function handleMouseMove(evt) {
+		mouseX = isIE ? window.event.clientX : evt.pageX;
+		mouseY = isIE ? window.event.clientY : evt.pageY;
+		window.status = "Mouse: X="+mouseX+",Y="+mouseY;
+
+		label = document.getElementById("boardString");
+		label.innerHTML = "Mouse: X="+mouseX+",Y="+mouseY;
+
+		return false;
+	}
+
+</script>
+
+
+<body onload=init() ; bgcolor="Black">
+<p ID="boardString" align=center style="font-family: courier, monospace;color:white; margin-top:0;"></p>
+</body>
+</html>
+ 

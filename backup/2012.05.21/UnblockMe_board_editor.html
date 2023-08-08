@@ -1,0 +1,53 @@
+<html>
+<head>
+    <title>Unblockme</title>
+
+    <script type="text/javascript" src="js/raphael-min.js"></script>
+    <script type="text/javascript" src="js/unblockme.js"></script>
+
+    <script type="text/javascript">
+    function puzzleChanged(puz) {
+			Log(puz.options[puz.selectedIndex].value);
+    }
+    </script>
+    
+</head>
+<body onload = init() ; bgcolor="Black">
+  <div id="workspace" style="width: 100%; height:55%;"></div>
+
+  <select name="mode" style = "position:absolute; top:60px; left:10px; z-index:1000;">
+		<option>Editor</option>
+		<option>Play</option>
+		<option>Solution</option>
+	</select>
+
+	<select name="puzzles" title="test" onchange=puzzleChanged(this) style = "position:absolute; top:60px; left:100px; z-index:1000;">
+		 <option value=""></option>
+		 <option value="volvo">Volvo</option>
+		 <option value="saab">Saab</option>
+		 <option value="mercedes">Mercedes</option>
+		 <option value="audi">Audi</option>
+	 </select>	
+	 
+		<input id="solveBtn" type="button" onclick=solveBtnClick(); value="Solve" style = "position:absolute; top:60px; left:400px; z-index:1000;" />	 
+	
+  <table width="100%">
+    <tr>
+      <td colspan="2" valign="center">
+        <h3 ID="moves" align=center style="color:white">No solution available.</h3>
+      </td>
+    </tr>
+    <tr>
+      <td width="50%" align="right">
+        <input id="prevBtn" type="button" onclick=prevStep(); value="Prev" style = "z-index:1000;"/>
+      </td>
+      <td width="50%" align="left">
+        <input id="nextBtn" type="button" onclick=nextStep(); value="Next" style = "z-index:1000;"/>
+      </td>
+    </tr>
+  </table>
+  <p ID="boardString" align=center style="font-family: courier, monospace;color:white; margin-top:0;">000000000000000000000000000000000000</p>
+  <hr />
+  <p ID="txt" align=center style="color:white"></p>
+</body>
+</html>

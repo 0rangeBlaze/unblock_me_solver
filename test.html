@@ -1,0 +1,43 @@
+<html>
+<script type="text/javascript">
+
+	var isIE = document.all ? true : false;
+
+
+	function init() {
+		document.onmousemove = handleMouseMove;
+		document.onkeypress = processKey;
+	}
+
+	function handleMouseMove(evt) {
+		mouseX = isIE ? window.event.clientX : evt.pageX;
+		mouseY = isIE ? window.event.clientY : evt.pageY;
+		window.status = "Mouse: X="+mouseX+",Y="+mouseY;
+
+		label = document.getElementById("boardString");
+		label.innerHTML = "Mouse: X="+mouseX+",Y="+mouseY;
+
+		return false;
+	}
+
+  function processKey(e)
+  {
+      if (null == e) {
+          e = window.event ;
+          //alert('Null');
+      }    
+      
+      label = document.getElementById("boardString");
+      label.innerHTML = "kepressed = " + e.keyCode;
+      
+      return false;
+  }
+
+</script>
+
+
+<body onload=init() ; bgcolor="Black">
+<p ID="boardString" align=center style="font-family: courier, monospace;color:white; margin-top:0;"></p>
+</body>
+</html>
+ 

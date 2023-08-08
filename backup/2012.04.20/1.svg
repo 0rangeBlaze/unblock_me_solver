@@ -1,0 +1,17 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+	<rect x="460" y="50" rx="2" ry="2" width="312" height="312" style="fill:RGB(103,73,30);stroke:RGB(168,123,45);stroke-width:5;opacity:1"/>
+	<rect x="466" y="56" rx="8" ry="8" width="100" height="50" style="fill:RGB(220,141,61);stroke:Sienna;stroke-width:3;opacity:1"/>
+	<rect x="616" y="56" rx="8" ry="8" width="50" height="150" style="fill:RGB(220,141,61);stroke:Sienna;stroke-width:3;opacity:1"/>
+	<rect x="666" y="56" rx="8" ry="8" width="50" height="100" style="fill:RGB(220,141,61);stroke:Sienna;stroke-width:3;opacity:1"/>
+	<rect x="466" y="106" rx="8" ry="8" width="150" height="50" style="fill:RGB(220,141,61);stroke:Sienna;stroke-width:3;opacity:1"/>
+	<rect x="466" y="156" rx="8" ry="8" width="100" height="50" style="fill:RGB(194,33,2);stroke:Sienna;stroke-width:3;opacity:1"/>
+	<rect x="666" y="156" rx="8" ry="8" width="50" height="100" style="fill:RGB(220,141,61);stroke:Sienna;stroke-width:3;opacity:1"/>
+	<rect x="466" y="206" rx="8" ry="8" width="50" height="100" style="fill:RGB(220,141,61);stroke:Sienna;stroke-width:3;opacity:1"/>
+	<rect x="566" y="206" rx="8" ry="8" width="100" height="50" style="fill:RGB(220,141,61);stroke:Sienna;stroke-width:3;opacity:1"/>
+	<rect x="566" y="256" rx="8" ry="8" width="50" height="100" style="fill:RGB(220,141,61);stroke:Sienna;stroke-width:3;opacity:1"/>
+	<rect x="616" y="256" rx="8" ry="8" width="100" height="50" style="fill:RGB(220,141,61);stroke:Sienna;stroke-width:3;opacity:1"/>
+	<rect x="466" y="306" rx="8" ry="8" width="100" height="50" style="fill:RGB(220,141,61);stroke:Sienna;stroke-width:3;opacity:1"/>
+</svg>

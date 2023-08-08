@@ -1,0 +1,14 @@
+- while dragging instead of "minx,miny,maxy, maxx" only min and max
+- human readability index
+- reduce name length (orientation, size , marker ... etc.)
+- remove "marker" property
+- explore all possible boards
+
+pos = array[108] of blocks
+block = 
+locked_counter
+locking_blocks_array
+cx, 
+cy, 
+size,
+orientatio

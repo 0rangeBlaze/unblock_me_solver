@@ -1,0 +1,54 @@
+<html>
+<head>
+<script language="javascript">
+var index = 0;
+
+function nextStep() {
+	if (index < 1) {
+		index++;
+	}
+	document.getElementById('a').style.visibility='visible';
+	document.getElementById('A').style.visibility='visible';
+	document.getElementById('c2').style.visibility='visible';
+}
+function prevStep() {
+	if (index > 0) {
+		index--;
+	}
+	document.getElementById('a').style.visibility='hidden';
+	document.getElementById('A').style.visibility='hidden';
+	document.getElementById('c2').style.visibility='hidden';
+}
+</script>
+</head>
+<body bgcolor="Black">
+
+<table width="100%">
+<tr height="400" >
+		<td colspan="2" valign="top">
+			<svg id="a" style="visibility:visible">
+        <circle style="position:absolute" cx="100" cy="50" r="40" stroke="black" stroke-width="2" fill="red"/>
+      </svg>
+
+			<svg id='A' style="visibility:visible">
+        <circle style="position:absolute" cx="100" cy="50" r="30" stroke="black" stroke-width="2" fill="blue"/>
+      </svg>
+      
+      <svg id="c" style="visibility:visible">
+        <circle id="c1" style="position:absolute" cx="150" cy="50" r="40" stroke="black" stroke-width="2" fill="red"/>
+        <circle id="c2" style="position:absolute" cx="150" cy="50" r="30" stroke="black" stroke-width="2" fill="blue"/>
+      </svg>
+
+		</td>
+	</tr><tr>
+		<td width="50%" align="right">
+			<input type="button" onclick=prevStep(); value="Prev"/>
+		</td><td width="50%" align="left">
+			<input type="button" onclick=nextStep(); value="Next"/>
+		</td>
+	</tr>
+</table>
+
+</body>
+</html>
+ 

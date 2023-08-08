@@ -1,0 +1,84 @@
+procedure printstring(a_str varchar2)
+function boardtostring(a_board  boardtype) return varchar2
+procedure checkboard(a_board boardtype, a_blocks blocksarraytype)
+procedure removeblock(a_board in out boardtype, a_block blocktype)
+procedure addblock(a_board in out boardtype, a_block blocktype)
+procedure registerblock (a_x number, a_y number, a_l number, a_O varchar2, a_m varchar2 default null)
+procedure stringtoblocks(a_str varchar2)
+function move(a_position in out nocopy blocksArrayType, a_board in out nocopy boardtype, a_block_id number, a_coord number) return boolean
+procedure solve(a_position blocksArrayType, a_board boardtype)
+
+
+
+
+
++ procedure printstring(a_str varchar2)
+function blocksfromstring(a_str varchar2) return blocksarraytype
+function blockstostring(a_blocks  blocksarraytype) return varchar2
+?function boardfromblocks(a_blocks  blocksarraytype) return boardtype
+function boardfromkey(a_key  varchar2) return boardtype
+function boardtostring(a_board boardtype) return varchar2
+
++ function move(a_position blocksArrayType, a_block_id number, a_coord number) return varchar2
++ procedure solve(a_position blocksArrayType)
+
+
+
+
+declare
+
+res number;
+tot number:=0;
+
+function dist(s1 varchar2, s2 varchar2) return boolean is
+cnt number := 0;
+begin
+for i in 1..length(s1) loop
+if substr(s1,i,1) <> substr(s2,i,1) then
+cnt := cnt + 1;
+if cnt > 1 then
+return false;
+end if;
+end if;
+end loop;
+return cnt = 1;
+end;
+
+
+begin
+for i in 1..1000000 loop
+-- res := utl_match.EDIT_DISTANCE('ABBB0CA0DE0CXXDE0C00DFGG0HHFJ00IIIJ0','ABB00CA0DE0CXXDE0C00DFGG0HHFJ00IIIJ0');
+-- tot := tot + res;
+
+if dist('ABBB0CA0DE0CXXDE0C00DFGG0HHFJ00IIIJ0','ABB00CA0DE0CXXDE0C00DFGG0HHFJ00IIIJ0') then
+tot := tot + 1;
+end if;
+end loop;
+dbms_output.put_line(tot);
+end;
+/
+
+
+
+
+
+  procedure enumerate(block_id) is
+    step steptype;
+    id number;
+    done boolean;
+    position blocksarraytype;
+    key varchar2(36);
+    
+  begin
+		old := blocks(block_id).coord;
+		for i in 0..6 - blocks(block_id).length loop
+			if move(blocks(block_id), i) then
+				if block_id = last then
+					combo_found;
+				else
+					solve(block_id + 1);
+				end if;
+				blocks(block_id).coord := old;
+			end if;
+		end loop;
+  end;

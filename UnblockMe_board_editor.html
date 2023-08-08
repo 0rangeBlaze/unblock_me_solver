@@ -1,0 +1,99 @@
+<html>
+<head>
+    <title>Unblockme</title>
+
+    <script type="text/javascript" src="js/raphael-min.js"></script>
+    <script type="text/javascript" src="js/unblockme.js"></script>
+
+    <script type="text/javascript">
+			function puzzleChanged(puz) {
+				document.getElementById("txt").innerHTML = '';
+				document.getElementById("moves").innerHTML = 'Not solved yet.';
+				stringToBlocks(puz.options[puz.selectedIndex].value);
+			}
+			
+			function modeChanged(newMode) {
+					mode = newMode.options[newMode.selectedIndex].value;
+					if (mode == 'Play') {
+						for (i=0;i<blocks.length;i++) {
+							blocks[i].drag(dragMove, dragStart, dragStop);
+						}
+					}
+			}
+			
+    </script>
+    
+</head>
+<body onload = init() ; bgcolor="Black">
+  <div id="workspace" style="width: 100%; height:55%;"></div>
+
+  <select name="mode" onchange=modeChanged(this) style = "position:absolute; top:60px; left:10px; z-index:1000;">
+		<option>Edit</option>
+		<option>Play</option>
+		<option>Solution</option>
+	</select>
+
+	<select name="puzzles" title="test" onchange=puzzleChanged(this) style = "position:absolute; top:60px; left:100px; z-index:1000;">
+		 <option value=""></option>
+
+
+<option value="h242v320v330">1 </option>
+<option value="h242v320v330v343">2 </option>
+<option value="h242v320v330v343v353">3 </option>
+<option value="h242v320v330v353">4 </option>
+<option value="h242v320v343">5 </option>
+<option value="h242v320v343v353">6 </option>
+<option value="h242v320v353">7 </option>
+<option value="h242v330">8 </option>
+<option value="h242v330v343">9 </option>
+<option value="h242v330v343v353">10 </option>
+<option value="h242v330v353">11 </option>
+<option value="h242v343">12 </option>
+<option value="h242v343v353">13 </option>
+<option value="h242v353">14 </option>
+
+
+
+		 <option value="h200h224h225h212v220v202v204v244v254v252v214v330">21 01</option>
+		 <option value="h202h211h214h234h243h305h300v250v240v232v222v203">26 01</option>
+		 <option value="h212h230h231h243h204h305v200v202v220v232v234v350">32 01</option>
+		 <option value="h212h211h203h243h234h300v201v230v240v250v232v223v254">32 02</option>
+		 <option value="h202h205h221h234h300v222v232v240v203v213v224v254h243">32 03</option>
+		 <option value="h202h203h214h240h220h315v200v210v204v233v321v352">34 01</option>
+		 <option value="h202h203h240h241h314v204v230v221v232v252v254v342">35 01</option>
+		 <option value="h232h200h214h245v240v204v350v320v333h243">35 02</option>
+		 <option value="h202h201h213h243h234h205h300v203v224v254v230v240v250v232">39 01</option>
+		 <option value="h202h220h240h235v231v224v210h313v341v353v303">40 01</option>
+		 <option value="h220h240h221h202h204h233h305v200v234v251v253v322">42 01</option>
+		 <option value="h222h203h200h231h304h305v201v220v250v242v252v244v333">46 01</option>
+		 <option value="h222h211h203v201h300v230v340v223v214h225h245h234v253">47 01</option>
+		 <option value="h222h211h203v201h300v230v340v350v223v214h225h244h245">49 01</option>
+		 <option value="h202h211h240h243h203h314h315v204v254v222v232v230v241">49 02</option>
+		 <option value="h202h233h224h225h203h330v220v222v214v352v231">49 03</option>
+		 <option value="h202h211h203h240h243h225h314v204v222v232v230v241v254">49 05</option>
+		 <option value="h202h203h224h225h233h330v220v222v231v204v214v352">50 01</option>
+		 <option value="h210h232h244h235h205h303v211v221v240v233v224v300v351">51 01</option>
+	 </select>	
+	 
+		<input id="solveBtn" type="button" onclick=solveBtnClick(); value="Solve" style = "position:absolute; top:60px; left:400px; z-index:1000;" />	 
+	
+  <table width="100%">
+    <tr>
+      <td colspan="2" valign="center">
+        <h3 ID="moves" align=center style="color:white">Not solved yet.</h3>
+      </td>
+    </tr>
+    <tr>
+      <td width="50%" align="right">
+        <input id="prevBtn" type="button" onclick=prevStep(); value="Prev" style = "z-index:1000;"/>
+      </td>
+      <td width="50%" align="left">
+        <input id="nextBtn" type="button" onclick=nextStep(); value="Next" style = "z-index:1000;"/>
+      </td>
+    </tr>
+  </table>
+  <p ID="boardString" align=center style="font-family: courier, monospace;color:white; margin-top:0;">000000000000000000000000000000000000</p>
+  <hr />
+  <p ID="txt" align=center style="color:white"></p>
+</body>
+</html>

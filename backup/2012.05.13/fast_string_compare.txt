@@ -1,0 +1,33 @@
+declare
+
+res number;
+tot number:=0;
+
+function dist(s1 varchar2, s2 varchar2) return boolean is
+cnt number := 0;
+begin
+for i in 1..length(s1) loop
+if substr(s1,i,1) <> substr(s2,i,1) then
+cnt := cnt + 1;
+if cnt > 1 then
+return false;
+end if;
+end if;
+end loop;
+return cnt = 1;
+end;
+
+
+begin
+for i in 1..1000000 loop
+-- res := utl_match.EDIT_DISTANCE('ABBB0CA0DE0CXXDE0C00DFGG0HHFJ00IIIJ0','ABB00CA0DE0CXXDE0C00DFGG0HHFJ00IIIJ0');
+-- tot := tot + res;
+
+if dist('ABBB0CA0DE0CXXDE0C00DFGG0HHFJ00IIIJ0','ABB00CA0DE0CXXDE0C00DFGG0HHFJ00IIIJ0') then
+tot := tot + 1;
+end if;
+end loop;
+dbms_output.put_line(tot);
+end;
+/
+
